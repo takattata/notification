@@ -1,0 +1,6 @@
+framework module Pods_notification_wordTests {
+  umbrella header "Pods-notification-wordTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
