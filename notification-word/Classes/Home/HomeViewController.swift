@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import UserNotifications
 
 class HomeViewController: UIViewController {
     enum Section: Int {
@@ -25,34 +24,17 @@ class HomeViewController: UIViewController {
         }
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        setupNavigation()
+    }
+
     static func create() -> HomeViewController {
         let storyboard = UIStoryboard(name: Identifier.Storyboard.homeViweController, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: Identifier.Storyboard.homeViweController) as! HomeViewController
 
         return viewController
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        let contents = UNMutableNotificationContent()
-        contents.title = "This is title."
-        contents.subtitle = "This is subtitle."
-        contents.body = "This is body. \nHello world!"
-
-        // トリガーの作成(5秒後に通知実行)
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10.0, repeats: false)
-
-        // リクエストの作成
-        let identifier = NSUUID().uuidString
-        let request = UNNotificationRequest(identifier: identifier, content: contents, trigger: trigger)
-
-        // リクエスト実行
-        UNUserNotificationCenter.current().add(request){ error in
-            if let error = error {
-                print("Unable to add notification request, \(error.localizedDescription)")
-            }
-        }
     }
 }
 
@@ -80,5 +62,27 @@ extension HomeViewController: UITableViewDataSource {
         default:
             return UITableViewCell()
         }
+    }
+}
+
+extension HomeViewController {
+    private func setupNavigation() {
+        let starIcon = UIImage.fontAwesomeIcon(name: .starO, textColor: .darkGray, size: CGSize(width: 36, height: 36))
+        ///FIXME: シェアのアイコンはないっぽいけど、どう実装するの??.
+        let shareIcon = UIImage.fontAwesomeIcon(name: .shareSquare, textColor: .darkGray, size: CGSize(width: 36, height: 36))
+
+        let icons: [UIBarButtonItem] = [
+            translateBarButtonItem(icon: starIcon),
+            translateBarButtonItem(icon: shareIcon)
+        ]
+
+        navigationItem.rightBarButtonItems = icons
+    }
+
+    private func translateBarButtonItem(icon: UIImage) -> UIBarButtonItem {
+        let button = UIButton()
+        button.setImage(icon, for: .normal)
+        button.sizeToFit()
+        return UIBarButtonItem(customView: button)
     }
 }

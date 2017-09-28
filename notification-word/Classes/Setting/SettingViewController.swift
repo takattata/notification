@@ -11,6 +11,7 @@ import UIKit
 
 import RxCocoa
 import RxSwift
+import UserNotifications
 
 class SettingViewController: UIViewController {
     enum Section: Int {
@@ -76,6 +77,8 @@ extension SettingViewController: UITableViewDataSource {
 extension SettingViewController {
     private func setupNavigation() {
         navigationItem.title = "通知設定"
+        ///FIXME: 反映されぬ... 
+//        navigationItem.backBarButtonItem?.title = "戻る"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "保存", style: .done, target: self, action: nil)
         navigationItem.rightBarButtonItem?.rx.tap
             .subscribe(
@@ -89,6 +92,25 @@ extension SettingViewController {
     private func saveData() {
         ///FIXME:
         print(">>> test saved.")
+
+        let contents = UNMutableNotificationContent()
+        contents.title = "This is title."
+        contents.subtitle = "This is subtitle."
+        contents.body = "This is body. \nHello world!"
+
+        // トリガーの作成(5秒後に通知実行)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10.0, repeats: false)
+
+        // リクエストの作成
+        let identifier = NSUUID().uuidString
+        let request = UNNotificationRequest(identifier: identifier, content: contents, trigger: trigger)
+
+        // リクエスト実行
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Unable to add notification request, \(error.localizedDescription)")
+            }
+        }
     }
 
     private func popViewController() {

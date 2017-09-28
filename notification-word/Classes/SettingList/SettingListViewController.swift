@@ -70,9 +70,24 @@ extension SettingListViewController: UITableViewDelegate {
             break
         }
     }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            ///FIXME: 破棄.
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
 }
 
 extension SettingListViewController {
+    private func setupNavigation() {
+        navigationItem.title = "通知リスト"
+    }
+
     private func showSetting() {
         let viewController = SettingViewController.create()
         navigationController?.pushViewController(viewController, animated: true)
