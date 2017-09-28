@@ -1,5 +1,5 @@
 //
-//  SettingViewController.swift
+//  SettingListViewController.swift
 //  notification-word
 //
 //  Created by Takashima on 2017/09/28.
@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class SettingViewController: UIViewController {
+class SettingListViewController: UIViewController {
     enum Section: Int {
-        case alertDate
+        case alert
 
         case MAX_NUM
     }
@@ -19,20 +19,21 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
+            tableView.delegate = self
 
             tableView.register(UINib(nibName: Identifier.Cell.alertDateCell, bundle: nil), forCellReuseIdentifier: Identifier.Cell.alertDateCell)
         }
     }
 
-    static func create() -> SettingViewController {
-        let storyboard = UIStoryboard(name: Identifier.Storyboard.settingViweController, bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: Identifier.Storyboard.settingViweController) as! SettingViewController
+    static func create() -> SettingListViewController {
+        let storyboard = UIStoryboard(name: Identifier.Storyboard.settingListViweController, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: Identifier.Storyboard.settingListViweController) as! SettingListViewController
 
         return viewController
     }
 }
 
-extension SettingViewController: UITableViewDataSource {
+extension SettingListViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return Section.MAX_NUM.rawValue
     }
@@ -45,12 +46,35 @@ extension SettingViewController: UITableViewDataSource {
         let section = Section(rawValue: indexPath.section)!
 
         switch section {
-        case .alertDate:
+        case .alert:
             let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.Cell.alertDateCell, for: indexPath) as! AlertDateCell
             cell.configure(time: Date(), dayOfTheWeek: "月(test)", enabled: true)
             return cell
         default:
             return UITableViewCell()
         }
+    }
+}
+
+extension SettingListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let section = Section(rawValue: indexPath.section) else {
+            return
+        }
+
+        switch section {
+        case .alert:
+            ///FIXME: model作って渡す、かな.
+            showSetting()
+        default:
+            break
+        }
+    }
+}
+
+extension SettingListViewController {
+    private func showSetting() {
+        let viewController = SettingViewController.create()
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

@@ -15,7 +15,7 @@ class TabBarController: UITabBarController {
     private var previousViewController: UIViewController?
 
     let home = HomeViewController.create()
-    let setting = SettingViewController.create()
+    let setting = SettingListViewController.create()
 
     override func viewDidLoad() {
         super.viewDidLoad()

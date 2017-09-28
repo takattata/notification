@@ -15,10 +15,13 @@ struct Identifier {
         static let quotationCell = "QuotationCell"
         static let textCell = "TextCell"
         static let alertDateCell = "AlertDateCell"
+        static let settingDateCell = "SettingDateCell"
+        static let settingTimeCell = "SettingTimeCell"
     }
 
     struct Storyboard {
         static let homeViweController = "HomeViewController"
-        static let settingViweController = "SettingViewController"
+        static let settingListViweController = "SettingListViewController"
+        static let settingViewController = "SettingViewController"
     }
 }

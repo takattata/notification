@@ -28,7 +28,7 @@ class AlertDateCell: UITableViewCell {
 
     private func setTime(_ time: Date) {
         let formatter = DateFormatter()
-        formatter.dateFormat = "a h:mm"
+        formatter.dateFormat = "h:mm a"
         formatter.amSymbol = "AM"
         formatter.pmSymbol = "PM"
         timeLabel.text = formatter.string(from: time)

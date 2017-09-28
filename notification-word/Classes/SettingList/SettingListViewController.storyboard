@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Setting View Controller-->
+        <!--Setting List View Controller-->
         <scene sceneID="kY0-T0-DdN">
             <objects>
-                <viewController storyboardIdentifier="SettingViewController" id="YRX-Sc-yrF" customClass="SettingViewController" customModule="notification_word" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YRX-Sc-yrF" customClass="SettingListViewController" customModule="notification_word" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6AJ-wV-1uZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
-                        <outlet property="tableView" destination="PRa-3r-Otf" id="VdF-Fu-hnn"/>
+                        <outlet property="tableView" destination="PRa-3r-Otf" id="1kF-ib-j4o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6d-Qc-8o1" userLabel="First Responder" sceneMemberID="firstResponder"/>
