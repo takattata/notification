@@ -17,6 +17,9 @@ class HomeViewController: UIViewController {
     }
 
     @IBOutlet weak var tableView: UITableView!
+    ///FIXME: get favorite state.
+    private var isFavoriteForTest = true
+    private var favoriteButton: UIButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +38,6 @@ class HomeViewController: UIViewController {
     private func configure(with: UITableView) {
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        
     }
 }
 
@@ -68,20 +70,25 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController {
     private func setupNavigation() {
-        let starIcon = UIImage.fontAwesomeIcon(name: .starO, textColor: .systemBlue, size: CGSize(width: 36, height: 36))
+        favoriteButton.addTarget(self, action: #selector(HomeViewController.favoriteButtonTap), for: .touchUpInside)
+        favoriteButton.setImage(UIImage.fontAwesomeIcon(name: .starO, textColor: .systemBlue, size: CGSize(width: 36, height: 36)), for: .normal)
+        favoriteButton.setImage(UIImage.fontAwesomeIcon(name: .star, textColor: .systemBlue, size: CGSize(width: 36, height: 36)), for: .selected)
+        favoriteButton.sizeToFit()
 
         let icons: [UIBarButtonItem] = [
-            translateBarButtonItem(icon: starIcon),
-            UIBarButtonItem(barButtonSystemItem: .action, target: self, action: nil)
+            UIBarButtonItem(customView: favoriteButton),
+            UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(HomeViewController.shareButtonTap))
         ]
 
         navigationItem.rightBarButtonItems = icons
     }
 
-    private func translateBarButtonItem(icon: UIImage) -> UIBarButtonItem {
-        let button = UIButton()
-        button.setImage(icon, for: .normal)
-        button.sizeToFit()
-        return UIBarButtonItem(customView: button)
+    @objc private func favoriteButtonTap(_ sender: UIBarButtonItem) {
+        isFavoriteForTest = !isFavoriteForTest
+        favoriteButton.isSelected = isFavoriteForTest
+    }
+
+    @objc private func shareButtonTap(_ sender: UIBarButtonItem) {
+
     }
 }
