@@ -70,6 +70,8 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController {
     private func setupNavigation() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.fontAwesomeIcon(name: .refresh, textColor: .systemBlue, size: CGSize(width: 36, height: 36)), style: .plain, target: self, action: #selector(HomeViewController.refreshButtonTap))
+
         favoriteButton.addTarget(self, action: #selector(HomeViewController.favoriteButtonTap), for: .touchUpInside)
         favoriteButton.setImage(UIImage.fontAwesomeIcon(name: .starO, textColor: .systemBlue, size: CGSize(width: 36, height: 36)), for: .normal)
         favoriteButton.setImage(UIImage.fontAwesomeIcon(name: .star, textColor: .systemBlue, size: CGSize(width: 36, height: 36)), for: .selected)
@@ -81,6 +83,10 @@ extension HomeViewController {
         ]
 
         navigationItem.rightBarButtonItems = icons
+    }
+
+    @objc private func refreshButtonTap(_ sender: UIBarButtonItem) {
+
     }
 
     @objc private func favoriteButtonTap(_ sender: UIBarButtonItem) {
