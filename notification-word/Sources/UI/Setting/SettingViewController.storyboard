@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Setting View Controller-->
+        <scene sceneID="zWa-qu-tAq">
+            <objects>
+                <viewController storyboardIdentifier="SettingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xuz-v0-sMM" customClass="SettingViewController" customModule="notification_word" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h2j-US-GpB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Owk-DQ-THs">
+                                <rect key="frame" x="-0.5" y="10" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingDateCell" rowHeight="200" id="6SV-g4-pqu" customClass="SettingDateCell" customModule="notification_word" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6SV-g4-pqu" id="Xeu-Ck-TcS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="KZg-5f-Oek">
+                                                    <rect key="frame" x="26.5" y="32.5" width="322" height="135"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通知する曜日を選択してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHR-XD-Yjs">
+                                                            <rect key="frame" x="31" y="0.0" width="260" height="11"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0s-nU-Dit">
+                                                            <rect key="frame" x="0.0" y="35" width="322" height="46"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6y-IW-d9m">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="46" height="46"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="46" id="VQk-39-wZf"/>
+                                                                        <constraint firstAttribute="height" constant="46" id="Yws-r8-aic"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="月"/>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKh-C2-riV" userLabel="火">
+                                                                    <rect key="frame" x="46" y="0.0" width="46" height="46"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="46" id="Fhq-4G-e0J"/>
+                                                                        <constraint firstAttribute="height" constant="46" id="OhH-9b-dK9"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="火"/>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6R-rI-foU">
+                                                                    <rect key="frame" x="92" y="0.0" width="46" height="46"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="46" id="oqY-nq-uA8"/>
+                                                                        <constraint firstAttribute="height" constant="46" id="xFu-o0-mFk"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="水"/>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYo-gW-fYq">
+                                                                    <rect key="frame" x="138" y="0.0" width="46" height="46"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="46" id="MiK-BT-twy"/>
+                                                                        <constraint firstAttribute="height" constant="46" id="x2J-Xk-Y7x"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="木"/>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjl-W2-y1X">
+                                                                    <rect key="frame" x="184" y="0.0" width="46" height="46"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="46" id="Dwt-RC-1HE"/>
+                                                                        <constraint firstAttribute="height" constant="46" id="irY-u0-gWh"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="金"/>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQl-Sl-Hl7">
+                                                                    <rect key="frame" x="230" y="0.0" width="46" height="46"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="46" id="GAG-7D-efE"/>
+                                                                        <constraint firstAttribute="width" constant="46" id="yxh-8g-Pa3"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="土"/>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51W-fk-cur">
+                                                                    <rect key="frame" x="276" y="0.0" width="46" height="46"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="46" id="viV-IN-BSU"/>
+                                                                        <constraint firstAttribute="height" constant="46" id="wJO-pK-hoZ"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="日"/>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="HR1-DJ-ctK">
+                                                            <rect key="frame" x="68" y="105" width="186" height="30"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCg-og-Ufy">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="M04-hH-o5m"/>
+                                                                        <constraint firstAttribute="width" constant="46" id="gAS-be-Tu4"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="平日"/>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTh-2p-cTq">
+                                                                    <rect key="frame" x="70" y="0.0" width="46" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="9qA-rg-qFh"/>
+                                                                        <constraint firstAttribute="width" constant="46" id="nUs-Rt-TrB"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="土日"/>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhy-Sj-mDS">
+                                                                    <rect key="frame" x="140" y="0.0" width="46" height="30"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="46" id="6v5-Zv-G0M"/>
+                                                                        <constraint firstAttribute="height" constant="30" id="9TX-3z-bcE"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="毎日"/>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KZg-5f-Oek" firstAttribute="centerX" secondItem="Xeu-Ck-TcS" secondAttribute="centerX" id="jm0-Qr-ern"/>
+                                                <constraint firstAttribute="bottom" secondItem="KZg-5f-Oek" secondAttribute="bottom" constant="32" id="nIg-AY-uWA"/>
+                                                <constraint firstItem="KZg-5f-Oek" firstAttribute="top" secondItem="Xeu-Ck-TcS" secondAttribute="top" constant="32" id="nho-Za-Kzk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateStackView" destination="b0s-nU-Dit" id="4BS-Ap-aLa"/>
+                                            <outlet property="groupStackView" destination="HR1-DJ-ctK" id="I7I-16-Ddp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingTimeCell" rowHeight="240" id="XlK-AH-eE4" customClass="SettingTimeCell" customModule="notification_word" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="228" width="375" height="240"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XlK-AH-eE4" id="Mnv-xc-oxq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="239.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="8MZ-3T-HhT">
+                                                    <rect key="frame" x="0.0" y="20" width="375" height="200"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="200" id="ohY-bK-mWb"/>
+                                                        <constraint firstAttribute="width" constant="375" id="xxa-sZ-uRJ"/>
+                                                    </constraints>
+                                                    <date key="date" timeIntervalSinceReferenceDate="528267111.63018698">
+                                                        <!--2017-09-28 04:51:51 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="8MZ-3T-HhT" firstAttribute="centerX" secondItem="Mnv-xc-oxq" secondAttribute="centerX" id="2fO-Ih-y2h"/>
+                                                <constraint firstAttribute="bottom" secondItem="8MZ-3T-HhT" secondAttribute="bottom" constant="19.5" id="PSu-EZ-Rzx"/>
+                                                <constraint firstItem="8MZ-3T-HhT" firstAttribute="top" secondItem="Mnv-xc-oxq" secondAttribute="top" constant="20" id="lGi-JJ-8er"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="datePicker" destination="8MZ-3T-HhT" id="EXo-oi-FiL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Owk-DQ-THs" firstAttribute="centerY" secondItem="7st-hd-QZB" secondAttribute="centerY" id="ARC-0t-vJ7"/>
+                            <constraint firstItem="Owk-DQ-THs" firstAttribute="width" secondItem="h2j-US-GpB" secondAttribute="width" id="Iuk-eT-MdP"/>
+                            <constraint firstItem="Owk-DQ-THs" firstAttribute="height" secondItem="h2j-US-GpB" secondAttribute="height" id="jdV-aW-UZf"/>
+                            <constraint firstItem="Owk-DQ-THs" firstAttribute="centerX" secondItem="7st-hd-QZB" secondAttribute="centerX" id="qUE-RH-Tko"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7st-hd-QZB"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="tableView" destination="Owk-DQ-THs" id="tsb-3b-Wub"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JKm-Xr-pIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-154.40000000000001" y="-311.69415292353824"/>
+        </scene>
+    </scenes>
+</document>

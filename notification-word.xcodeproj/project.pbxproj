@@ -11,7 +11,6 @@
 		3B031ED21F7CC175002F8C18 /* SettingDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B031ED11F7CC175002F8C18 /* SettingDateCell.swift */; };
 		3B031ED41F7CC181002F8C18 /* SettingTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B031ED31F7CC181002F8C18 /* SettingTimeCell.swift */; };
 		3B0B7CD61F7C930900ED7E73 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0B7CD51F7C930900ED7E73 /* HomeViewController.storyboard */; };
-		3B0B7CD81F7C938C00ED7E73 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B7CD71F7C938C00ED7E73 /* Identifier.swift */; };
 		3B0B7CE41F7CB4FE00ED7E73 /* AlertDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B7CE01F7CB4FE00ED7E73 /* AlertDateCell.swift */; };
 		3B0B7CE51F7CB4FE00ED7E73 /* AlertDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0B7CE11F7CB4FE00ED7E73 /* AlertDateCell.xib */; };
 		3B0B7CE61F7CB4FE00ED7E73 /* SettingListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0B7CE21F7CB4FE00ED7E73 /* SettingListViewController.storyboard */; };
@@ -24,9 +23,13 @@
 		3B8D0DF21F5964CA009D982B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B8D0DF01F5964CA009D982B /* LaunchScreen.storyboard */; };
 		3B8D0DFD1F5964CB009D982B /* notification_wordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D0DFC1F5964CB009D982B /* notification_wordTests.swift */; };
 		3B8D0E081F5964CB009D982B /* notification_wordUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D0E071F5964CB009D982B /* notification_wordUITests.swift */; };
+		3B9A5B5D1F882CA800BE1C4C /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A5B5C1F882CA800BE1C4C /* NSObjectExtension.swift */; };
+		3B9A5B601F882CCE00BE1C4C /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A5B5F1F882CCE00BE1C4C /* UITableViewExtension.swift */; };
 		3BC6417B1F7C5F11008BC755 /* TextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6417A1F7C5F11008BC755 /* TextCell.swift */; };
 		3BC6417D1F7C81A7008BC755 /* QuotationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6417C1F7C81A7008BC755 /* QuotationCell.swift */; };
 		3BC6417F1F7C8462008BC755 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6417E1F7C8462008BC755 /* TabBarController.swift */; };
+		3BE46B751F804A3000458572 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE46B741F804A3000458572 /* SettingModel.swift */; };
+		3BE46B7B1F8307D200458572 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE46B7A1F8307D100458572 /* UIColorExtension.swift */; };
 		51858CC8F7C1F7880ADE305D /* Pods_notification_wordTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBD4EFCD341353E60E89250 /* Pods_notification_wordTests.framework */; };
 		D7995AC6E6E07E55288DCA0A /* Pods_notification_word.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5205362C172F0D6B8A8D80A /* Pods_notification_word.framework */; };
 /* End PBXBuildFile section */
@@ -54,7 +57,6 @@
 		3B031ED11F7CC175002F8C18 /* SettingDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDateCell.swift; sourceTree = "<group>"; };
 		3B031ED31F7CC181002F8C18 /* SettingTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTimeCell.swift; sourceTree = "<group>"; };
 		3B0B7CD51F7C930900ED7E73 /* HomeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
-		3B0B7CD71F7C938C00ED7E73 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		3B0B7CE01F7CB4FE00ED7E73 /* AlertDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDateCell.swift; sourceTree = "<group>"; };
 		3B0B7CE11F7CB4FE00ED7E73 /* AlertDateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertDateCell.xib; sourceTree = "<group>"; };
 		3B0B7CE21F7CB4FE00ED7E73 /* SettingListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingListViewController.storyboard; sourceTree = "<group>"; };
@@ -73,9 +75,13 @@
 		3B8D0E031F5964CB009D982B /* notification-wordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "notification-wordUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B8D0E071F5964CB009D982B /* notification_wordUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notification_wordUITests.swift; sourceTree = "<group>"; };
 		3B8D0E091F5964CB009D982B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B9A5B5C1F882CA800BE1C4C /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
+		3B9A5B5F1F882CCE00BE1C4C /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		3BC6417A1F7C5F11008BC755 /* TextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextCell.swift; sourceTree = "<group>"; };
 		3BC6417C1F7C81A7008BC755 /* QuotationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationCell.swift; sourceTree = "<group>"; };
 		3BC6417E1F7C8462008BC755 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		3BE46B741F804A3000458572 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		3BE46B7A1F8307D100458572 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		50C5958A48CBDCEE91B7EEF2 /* Pods-notification-word.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notification-word.release.xcconfig"; path = "Pods/Target Support Files/Pods-notification-word/Pods-notification-word.release.xcconfig"; sourceTree = "<group>"; };
 		6F53CB9B380BC782A879252B /* Pods-notification-word.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notification-word.debug.xcconfig"; path = "Pods/Target Support Files/Pods-notification-word/Pods-notification-word.debug.xcconfig"; sourceTree = "<group>"; };
 		A80F73C2AD90045F6206FA86 /* Pods-notification-wordTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notification-wordTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-notification-wordTests/Pods-notification-wordTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -139,10 +145,10 @@
 		3B0B7CDF1F7CB4FE00ED7E73 /* SettingList */ = {
 			isa = PBXGroup;
 			children = (
-				3B0B7CE01F7CB4FE00ED7E73 /* AlertDateCell.swift */,
-				3B0B7CE11F7CB4FE00ED7E73 /* AlertDateCell.xib */,
 				3B0B7CE21F7CB4FE00ED7E73 /* SettingListViewController.storyboard */,
 				3B0B7CE31F7CB4FE00ED7E73 /* SettingListViewController.swift */,
+				3B0B7CE11F7CB4FE00ED7E73 /* AlertDateCell.xib */,
+				3B0B7CE01F7CB4FE00ED7E73 /* AlertDateCell.swift */,
 			);
 			path = SettingList;
 			sourceTree = "<group>";
@@ -154,19 +160,21 @@
 				3B0B7CEB1F7CB60400ED7E73 /* SettingViewController.swift */,
 				3B031ED11F7CC175002F8C18 /* SettingDateCell.swift */,
 				3B031ED31F7CC181002F8C18 /* SettingTimeCell.swift */,
+				3BE46B741F804A3000458572 /* SettingModel.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		3B6504A31F764E5600177319 /* Classes */ = {
+		3B6504A31F764E5600177319 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3B9A5B5B1F8828C500BE1C4C /* Common */,
 				3B0B7CE81F7CB52E00ED7E73 /* Setting */,
 				3B0B7CDF1F7CB4FE00ED7E73 /* SettingList */,
 				3B6504A51F764EA500177319 /* Home */,
 				3BC6417E1F7C8462008BC755 /* TabBarController.swift */,
 			);
-			path = Classes;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		3B6504A51F764EA500177319 /* Home */ = {
@@ -205,12 +213,8 @@
 		3B8D0DE61F5964CA009D982B /* notification-word */ = {
 			isa = PBXGroup;
 			children = (
-				3B6504A31F764E5600177319 /* Classes */,
-				3B8D0DE71F5964CA009D982B /* AppDelegate.swift */,
-				3B8D0DEE1F5964CA009D982B /* Assets.xcassets */,
-				3B8D0DF01F5964CA009D982B /* LaunchScreen.storyboard */,
-				3B8D0DF31F5964CA009D982B /* Info.plist */,
-				3B0B7CD71F7C938C00ED7E73 /* Identifier.swift */,
+				3B9A5B5A1F88286000BE1C4C /* Sources */,
+				3B9A5B591F88284E00BE1C4C /* Resources */,
 			);
 			path = "notification-word";
 			sourceTree = "<group>";
@@ -231,6 +235,51 @@
 				3B8D0E091F5964CB009D982B /* Info.plist */,
 			);
 			path = "notification-wordUITests";
+			sourceTree = "<group>";
+		};
+		3B9A5B291F8827F400BE1C4C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3B8D0DE71F5964CA009D982B /* AppDelegate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3B9A5B591F88284E00BE1C4C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3B8D0DF01F5964CA009D982B /* LaunchScreen.storyboard */,
+				3B8D0DEE1F5964CA009D982B /* Assets.xcassets */,
+				3B8D0DF31F5964CA009D982B /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3B9A5B5A1F88286000BE1C4C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3B6504A31F764E5600177319 /* UI */,
+				3B9A5B291F8827F400BE1C4C /* Common */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		3B9A5B5B1F8828C500BE1C4C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3B9A5B5E1F882CBA00BE1C4C /* Extension */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3B9A5B5E1F882CBA00BE1C4C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3B9A5B5C1F882CA800BE1C4C /* NSObjectExtension.swift */,
+				3BE46B7A1F8307D100458572 /* UIColorExtension.swift */,
+				3B9A5B5F1F882CCE00BE1C4C /* UITableViewExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,11 +575,14 @@
 				3BC6417D1F7C81A7008BC755 /* QuotationCell.swift in Sources */,
 				3B0B7CE41F7CB4FE00ED7E73 /* AlertDateCell.swift in Sources */,
 				3B0B7CE71F7CB4FE00ED7E73 /* SettingListViewController.swift in Sources */,
+				3B9A5B601F882CCE00BE1C4C /* UITableViewExtension.swift in Sources */,
 				3B8D0DE81F5964CA009D982B /* AppDelegate.swift in Sources */,
+				3B9A5B5D1F882CA800BE1C4C /* NSObjectExtension.swift in Sources */,
 				3B0B7CEC1F7CB60400ED7E73 /* SettingViewController.swift in Sources */,
-				3B0B7CD81F7C938C00ED7E73 /* Identifier.swift in Sources */,
+				3BE46B751F804A3000458572 /* SettingModel.swift in Sources */,
 				3BC6417F1F7C8462008BC755 /* TabBarController.swift in Sources */,
 				3BC6417B1F7C5F11008BC755 /* TextCell.swift in Sources */,
+				3BE46B7B1F8307D200458572 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,7 +730,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E37YH96M9E;
-				INFOPLIST_FILE = "notification-word/Info.plist";
+				INFOPLIST_FILE = "notification-word/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.takattata.notification-word";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -692,7 +744,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E37YH96M9E;
-				INFOPLIST_FILE = "notification-word/Info.plist";
+				INFOPLIST_FILE = "notification-word/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.takattata.notification-word";
 				PRODUCT_NAME = "$(TARGET_NAME)";
