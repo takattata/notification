@@ -149,21 +149,35 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="239.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="8MZ-3T-HhT">
-                                                    <rect key="frame" x="0.0" y="20" width="375" height="200"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Nof-sE-qcf">
+                                                    <rect key="frame" x="0.0" y="4" width="375" height="231.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通知する時間を選択してください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9B-ol-DPZ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="23.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="8MZ-3T-HhT">
+                                                            <rect key="frame" x="0.0" y="31.5" width="375" height="200"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="200" id="ohY-bK-mWb"/>
+                                                                <constraint firstAttribute="width" constant="375" id="xxa-sZ-uRJ"/>
+                                                            </constraints>
+                                                            <date key="date" timeIntervalSinceReferenceDate="528267111.63018698">
+                                                                <!--2017-09-28 04:51:51 +0000-->
+                                                            </date>
+                                                        </datePicker>
+                                                    </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="200" id="ohY-bK-mWb"/>
-                                                        <constraint firstAttribute="width" constant="375" id="xxa-sZ-uRJ"/>
+                                                        <constraint firstItem="y9B-ol-DPZ" firstAttribute="centerX" secondItem="Nof-sE-qcf" secondAttribute="centerX" id="K7L-Ux-31b"/>
                                                     </constraints>
-                                                    <date key="date" timeIntervalSinceReferenceDate="528267111.63018698">
-                                                        <!--2017-09-28 04:51:51 +0000-->
-                                                    </date>
-                                                </datePicker>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="8MZ-3T-HhT" firstAttribute="centerX" secondItem="Mnv-xc-oxq" secondAttribute="centerX" id="2fO-Ih-y2h"/>
-                                                <constraint firstAttribute="bottom" secondItem="8MZ-3T-HhT" secondAttribute="bottom" constant="19.5" id="PSu-EZ-Rzx"/>
-                                                <constraint firstItem="8MZ-3T-HhT" firstAttribute="top" secondItem="Mnv-xc-oxq" secondAttribute="top" constant="20" id="lGi-JJ-8er"/>
+                                                <constraint firstAttribute="bottom" secondItem="Nof-sE-qcf" secondAttribute="bottom" constant="4" id="XTT-iZ-K4w"/>
+                                                <constraint firstItem="Nof-sE-qcf" firstAttribute="top" secondItem="Mnv-xc-oxq" secondAttribute="top" constant="4" id="mTj-Ep-fyV"/>
+                                                <constraint firstItem="Nof-sE-qcf" firstAttribute="centerX" secondItem="Mnv-xc-oxq" secondAttribute="centerX" id="tql-Az-tjY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
         return viewController
     }
 
-    private func configure(with: UITableView) {
+    private func configure(with tableView: UITableView) {
         tableView.dataSource = self
         tableView.separatorStyle = .none
     }

@@ -16,13 +16,13 @@ class SettingListViewController: UIViewController {
         case MAX_NUM
     }
 
-    @IBOutlet weak var tableView: UITableView! {
-        didSet {
-            tableView.dataSource = self
-            tableView.delegate = self
+    @IBOutlet weak var tableView: UITableView!
 
-            tableView.register(cellType: AlertDateCell.self)
-        }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        configure(with: tableView)
+        setupNavigation()
     }
 
     static func instantiate() -> SettingListViewController {
@@ -30,6 +30,13 @@ class SettingListViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(withIdentifier: self.className) as! SettingListViewController
 
         return viewController
+    }
+
+    private func configure(with tableView: UITableView) {
+        tableView.dataSource = self
+        tableView.delegate = self
+
+        tableView.register(cellType: AlertDateCell.self)
     }
 }
 
@@ -86,6 +93,12 @@ extension SettingListViewController: UITableViewDelegate {
 extension SettingListViewController {
     private func setupNavigation() {
         navigationItem.title = "通知リスト"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "追加", style: .done, target: self, action: #selector(SettingListViewController.plusButtonTap))
+    }
+
+    @objc private func plusButtonTap(_ sender: UIBarButtonItem) {
+        ///FIXME: 空のモデル渡す?.
+        showSetting()
     }
 
     private func showSetting() {

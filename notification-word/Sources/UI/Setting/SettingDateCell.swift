@@ -29,20 +29,33 @@ class SettingDateCell: UITableViewCell {
             if let body: UIButton = body as? UIButton {
                 body.layer.borderWidth = 1
                 body.layer.borderColor = UIColor.systemBlue.cgColor
-//                body.rx.tap.subscribe {
-//                    ///FIXME: うまくいってない.
-//                    let isOn = body.layer.backgroundColor == UIColor.systemBlue.cgColor
-//                    body.layer.backgroundColor = isOn ? UIColor.white.cgColor : UIColor.systemBlue.cgColor
-//                    body.titleLabel?.textColor = isOn ? .systemBlue : .white
-//                }.disposed(by: disposeBag)
+                body.addTarget(self, action: #selector(SettingDateCell.dateButtonTap), for: .touchUpInside)
+                body.setTitleColor(.white, for: .selected)
             }
         }
     }
 
     private func setGroup() {
         groupStackView.arrangedSubviews.forEach { body in
-            body.layer.borderWidth = 1
-            body.layer.borderColor = UIColor.systemBlue.cgColor
+            if let body: UIButton = body as? UIButton {
+                body.layer.borderWidth = 1
+                body.layer.borderColor = UIColor.systemBlue.cgColor
+                body.addTarget(self, action: #selector(SettingDateCell.groupButtonTap), for: .touchUpInside)
+                body.setTitleColor(.white, for: .selected)
+            }
         }
+    }
+
+    @objc private func dateButtonTap(_ sender: UIButton) {
+        let isOn = sender.layer.backgroundColor == UIColor.systemBlue.cgColor
+        sender.isSelected = !isOn
+        sender.layer.backgroundColor = sender.isSelected ? UIColor.systemBlue.cgColor : UIColor.white.cgColor
+    }
+
+    ///FIXME: 日付グループ機能.
+    @objc private func groupButtonTap(_ sender: UIButton) {
+        let isOn = sender.layer.backgroundColor == UIColor.systemBlue.cgColor
+        sender.isSelected = !isOn
+        sender.layer.backgroundColor = sender.isSelected ? UIColor.systemBlue.cgColor : UIColor.white.cgColor
     }
 }
