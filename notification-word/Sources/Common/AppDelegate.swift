@@ -9,6 +9,8 @@
 import UIKit
 import UserNotifications
 
+import Firebase
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -17,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupWindow()
         setupNotification()
         updateNotifications()
+        setupThirdParty()
 
         return true
     }
@@ -48,6 +51,10 @@ extension AppDelegate {
 
     private func updateNotifications() {
         ///FIXME: 前回開いた日付比較して日にちが新しくなっているなら通知1ヶ月分更新する.
+    }
+
+    private func setupThirdParty() {
+        FirebaseApp.configure()
     }
 }
 
