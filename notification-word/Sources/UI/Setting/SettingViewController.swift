@@ -18,18 +18,21 @@ protocol SettingView: class {
 class SettingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
-    private lazy var dataSource = SettingViewDataSource.init()
+    private lazy var presenter = SettingViewPresenter.init(view: self)
+    private lazy var dataSource = SettingViewDataSource.init(presenter: presenter)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        dataSource.configure(with: tableView)
         setupNavigation()
     }
 
-    static func instantiate() -> SettingViewController {
+    static func instantiate(date: AlertDay, line: Int) -> SettingViewController {
         let storyboard = UIStoryboard(name: self.className, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: self.className) as! SettingViewController
-
+        viewController.presenter.alertDay = date
+        viewController.presenter.line = line
         return viewController
     }
 }
@@ -67,11 +70,20 @@ extension SettingViewController {
         }
     }
 
-    private func popViewController() {
-        navigationController?.popViewController(animated: true)
-    }
-
     @objc private func saveButtonTap(_ sender: UIBarButtonItem) {
+        ///FIXME: fix source.
+        if let dayCell = tableView.visibleCells[SettingViewDataSource.Section.day.rawValue] as? SettingDaysCell {
+            presenter.setDay(with: dayCell.getData())
+        }
+        if let timeCell = tableView.visibleCells[SettingViewDataSource.Section.time.rawValue] as? SettingTimeCell {
+            presenter.setTime(with: timeCell.getData())
+        }
+
+        ///FIXME: func popViewController.
+        navigationController?.popViewController(animated: true)
+        if let settingListView = navigationController?.topViewController as? SettingListView {
+            settingListView.setAlertDay(with: presenter.alertDay, at: presenter.line)
+        }
     }
 }
 

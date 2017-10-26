@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  notification-word
 //
 //  Created by Takashima on 2017/09/01.

@@ -13,14 +13,14 @@
 		3B0B374D1F91B99A007BD225 /* HomeViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B374C1F91B99A007BD225 /* HomeViewDataSource.swift */; };
 		3B0B374F1F91B9D7007BD225 /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B374E1F91B9D7007BD225 /* HomeViewPresenter.swift */; };
 		3B0B37511F9461E7007BD225 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B37501F9461E7007BD225 /* Word.swift */; };
-		3B0B37541F946246007BD225 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B37531F946246007BD225 /* AlertDate.swift */; };
+		3B0B37541F946246007BD225 /* AlertDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B37531F946246007BD225 /* AlertDays.swift */; };
 		3B0B37561F946BD8007BD225 /* SettingViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B37551F946BD8007BD225 /* SettingViewDataSource.swift */; };
 		3B0B37581F946BF0007BD225 /* SettingListViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B37571F946BF0007BD225 /* SettingListViewDataSource.swift */; };
 		3B0B375A1F946CAA007BD225 /* SettingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B37591F946CAA007BD225 /* SettingViewPresenter.swift */; };
 		3B0B375C1F946CD0007BD225 /* SettingListViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B375B1F946CD0007BD225 /* SettingListViewPresenter.swift */; };
 		3B0B7CD61F7C930900ED7E73 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0B7CD51F7C930900ED7E73 /* HomeViewController.storyboard */; };
-		3B0B7CE41F7CB4FE00ED7E73 /* AlertDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B7CE01F7CB4FE00ED7E73 /* AlertDateCell.swift */; };
-		3B0B7CE51F7CB4FE00ED7E73 /* AlertDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0B7CE11F7CB4FE00ED7E73 /* AlertDateCell.xib */; };
+		3B0B7CE41F7CB4FE00ED7E73 /* AlertDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B7CE01F7CB4FE00ED7E73 /* AlertDayCell.swift */; };
+		3B0B7CE51F7CB4FE00ED7E73 /* AlertDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0B7CE11F7CB4FE00ED7E73 /* AlertDayCell.xib */; };
 		3B0B7CE61F7CB4FE00ED7E73 /* SettingListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0B7CE21F7CB4FE00ED7E73 /* SettingListViewController.storyboard */; };
 		3B0B7CE71F7CB4FE00ED7E73 /* SettingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B7CE31F7CB4FE00ED7E73 /* SettingListViewController.swift */; };
 		3B0B7CEA1F7CB5FD00ED7E73 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0B7CE91F7CB5FD00ED7E73 /* SettingViewController.storyboard */; };
@@ -66,14 +66,14 @@
 		3B0B374C1F91B99A007BD225 /* HomeViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDataSource.swift; sourceTree = "<group>"; };
 		3B0B374E1F91B9D7007BD225 /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
 		3B0B37501F9461E7007BD225 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
-		3B0B37531F946246007BD225 /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
+		3B0B37531F946246007BD225 /* AlertDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDays.swift; sourceTree = "<group>"; };
 		3B0B37551F946BD8007BD225 /* SettingViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewDataSource.swift; sourceTree = "<group>"; };
 		3B0B37571F946BF0007BD225 /* SettingListViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListViewDataSource.swift; sourceTree = "<group>"; };
 		3B0B37591F946CAA007BD225 /* SettingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewPresenter.swift; sourceTree = "<group>"; };
 		3B0B375B1F946CD0007BD225 /* SettingListViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListViewPresenter.swift; sourceTree = "<group>"; };
 		3B0B7CD51F7C930900ED7E73 /* HomeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
-		3B0B7CE01F7CB4FE00ED7E73 /* AlertDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDateCell.swift; sourceTree = "<group>"; };
-		3B0B7CE11F7CB4FE00ED7E73 /* AlertDateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertDateCell.xib; sourceTree = "<group>"; };
+		3B0B7CE01F7CB4FE00ED7E73 /* AlertDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDayCell.swift; sourceTree = "<group>"; };
+		3B0B7CE11F7CB4FE00ED7E73 /* AlertDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertDayCell.xib; sourceTree = "<group>"; };
 		3B0B7CE21F7CB4FE00ED7E73 /* SettingListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingListViewController.storyboard; sourceTree = "<group>"; };
 		3B0B7CE31F7CB4FE00ED7E73 /* SettingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingListViewController.swift; sourceTree = "<group>"; };
 		3B0B7CE91F7CB5FD00ED7E73 /* SettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
@@ -163,8 +163,8 @@
 				3B0B375B1F946CD0007BD225 /* SettingListViewPresenter.swift */,
 				3B0B7CE31F7CB4FE00ED7E73 /* SettingListViewController.swift */,
 				3B0B37571F946BF0007BD225 /* SettingListViewDataSource.swift */,
-				3B0B7CE11F7CB4FE00ED7E73 /* AlertDateCell.xib */,
-				3B0B7CE01F7CB4FE00ED7E73 /* AlertDateCell.swift */,
+				3B0B7CE11F7CB4FE00ED7E73 /* AlertDayCell.xib */,
+				3B0B7CE01F7CB4FE00ED7E73 /* AlertDayCell.swift */,
 			);
 			path = SettingList;
 			sourceTree = "<group>";
@@ -288,7 +288,7 @@
 				3BC6417E1F7C8462008BC755 /* TabBarController.swift */,
 				3B9A5B5E1F882CBA00BE1C4C /* Extension */,
 				3B0B37501F9461E7007BD225 /* Word.swift */,
-				3B0B37531F946246007BD225 /* AlertDate.swift */,
+				3B0B37531F946246007BD225 /* AlertDays.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -423,7 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B0B7CEA1F7CB5FD00ED7E73 /* SettingViewController.storyboard in Resources */,
-				3B0B7CE51F7CB4FE00ED7E73 /* AlertDateCell.xib in Resources */,
+				3B0B7CE51F7CB4FE00ED7E73 /* AlertDayCell.xib in Resources */,
 				3B8D0DF21F5964CA009D982B /* LaunchScreen.storyboard in Resources */,
 				3B0B7CE61F7CB4FE00ED7E73 /* SettingListViewController.storyboard in Resources */,
 				3B8D0DEF1F5964CA009D982B /* Assets.xcassets in Resources */,
@@ -595,7 +595,7 @@
 				3B0B374F1F91B9D7007BD225 /* HomeViewPresenter.swift in Sources */,
 				3B6504A91F764EFA00177319 /* HomeViewController.swift in Sources */,
 				3B031ED41F7CC181002F8C18 /* SettingTimeCell.swift in Sources */,
-				3B0B7CE41F7CB4FE00ED7E73 /* AlertDateCell.swift in Sources */,
+				3B0B7CE41F7CB4FE00ED7E73 /* AlertDayCell.swift in Sources */,
 				3B0B7CE71F7CB4FE00ED7E73 /* SettingListViewController.swift in Sources */,
 				3B9A5B601F882CCE00BE1C4C /* UITableViewExtension.swift in Sources */,
 				3B8D0DE81F5964CA009D982B /* AppDelegate.swift in Sources */,
@@ -609,7 +609,7 @@
 				3BC6417F1F7C8462008BC755 /* TabBarController.swift in Sources */,
 				3B0B37511F9461E7007BD225 /* Word.swift in Sources */,
 				3BC6417B1F7C5F11008BC755 /* WordCell.swift in Sources */,
-				3B0B37541F946246007BD225 /* AlertDate.swift in Sources */,
+				3B0B37541F946246007BD225 /* AlertDays.swift in Sources */,
 				3BE46B7B1F8307D200458572 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

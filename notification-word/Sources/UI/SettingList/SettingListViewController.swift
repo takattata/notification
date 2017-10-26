@@ -9,21 +9,16 @@
 import Foundation
 import UIKit
 
+protocol SettingListView: class {
+    func showSetting(with: AlertDay, at: Int)
+    func setAlertDay(with: AlertDay, at: Int)
+}
+
 class SettingListViewController: UIViewController {
-    enum Section: Int {
-        case alert
-
-        case MAX_NUM
-    }
-
     @IBOutlet weak var tableView: UITableView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        configure(with: tableView)
-        setupNavigation()
-    }
+    private(set) lazy var dataSource = SettingListViewDataSource.init(presenter: self.presenter)
+    private lazy var presenter = SettingListViewPresenter(view: self)
 
     static func instantiate() -> SettingListViewController {
         let storyboard = UIStoryboard(name: self.className, bundle: nil)
@@ -32,61 +27,17 @@ class SettingListViewController: UIViewController {
         return viewController
     }
 
-    private func configure(with tableView: UITableView) {
-        tableView.dataSource = self
-        tableView.delegate = self
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-        tableView.register(cellType: AlertDateCell.self)
-    }
-}
-
-extension SettingListViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return Section.MAX_NUM.rawValue
+        dataSource.configure(with: tableView)
+        setupNavigation()
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = Section(rawValue: indexPath.section)!
-
-        switch section {
-        case .alert:
-            let cell = tableView.dequeueReusableCell(with: AlertDateCell.self, for: indexPath)
-            cell.configure(time: Date(), dayOfTheWeek: "月(test)", enabled: true)
-            return cell
-        default:
-            return UITableViewCell()
-        }
-    }
-}
-
-extension SettingListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let section = Section(rawValue: indexPath.section) else {
-            return
-        }
-
-        switch section {
-        case .alert:
-            ///FIXME: model渡す、かな.
-            showSetting()
-        default:
-            break
-        }
-    }
-
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            ///FIXME: 破棄.
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-        }
+        tableView.reloadData()
     }
 }
 
@@ -97,12 +48,17 @@ extension SettingListViewController {
     }
 
     @objc private func plusButtonTap(_ sender: UIBarButtonItem) {
-        ///FIXME: 空のモデル渡す?.
-        showSetting()
+        presenter.showSetting()
+    }
+}
+
+extension SettingListViewController: SettingListView {
+    func showSetting(with date: AlertDay, at row: Int) {
+        let viewController = SettingViewController.instantiate(date: date, line: row)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
-    private func showSetting() {
-        let viewController = SettingViewController.instantiate()
-        navigationController?.pushViewController(viewController, animated: true)
+    func setAlertDay(with date: AlertDay, at row: Int) {
+        presenter.setDay(with: date, at: row)
     }
 }

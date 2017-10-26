@@ -4,8 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,7 +21,7 @@
                                 <rect key="frame" x="-0.5" y="10" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingDateCell" rowHeight="200" id="6SV-g4-pqu" customClass="SettingDateCell" customModule="notification_word" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingDaysCell" rowHeight="200" id="6SV-g4-pqu" customClass="SettingDaysCell" customModule="notification_word" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6SV-g4-pqu" id="Xeu-Ck-TcS">
@@ -125,6 +124,9 @@
                                                                         <constraint firstAttribute="height" constant="30" id="9TX-3z-bcE"/>
                                                                     </constraints>
                                                                     <state key="normal" title="毎日"/>
+                                                                    <connections>
+                                                                        <action selector="everydayButtonTap:" destination="Xuz-v0-sMM" eventType="touchUpOutside" id="0NN-f0-Khg"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -138,7 +140,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dateStackView" destination="b0s-nU-Dit" id="4BS-Ap-aLa"/>
+                                            <outlet property="daysStackView" destination="b0s-nU-Dit" id="4BS-Ap-aLa"/>
                                             <outlet property="groupStackView" destination="HR1-DJ-ctK" id="I7I-16-Ddp"/>
                                         </connections>
                                     </tableViewCell>

@@ -18,7 +18,10 @@ class SettingTimeCell: UITableViewCell {
         selectionStyle = .none
     }
 
-    func configure() {
+    func configure(with time: DateComponents) {
+    }
 
+    func getData() -> DateComponents {
+        return Calendar.current.dateComponents(in: TimeZone.current, from: datePicker.date)
     }
 }

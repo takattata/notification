@@ -1,5 +1,5 @@
 //
-//  SettingDateCell.swift
+//  SettingDaysCell.swift
 //  notification-word
 //
 //  Created by Takashima on 2017/09/28.
@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class SettingDateCell: UITableViewCell {
-    @IBOutlet weak var dateStackView: UIStackView!
+class SettingDaysCell: UITableViewCell {
+    @IBOutlet weak var daysStackView: UIStackView!
     @IBOutlet weak var groupStackView: UIStackView!
 
     override func awakeFromNib() {
@@ -19,18 +19,32 @@ class SettingDateCell: UITableViewCell {
         selectionStyle = .none
     }
 
-    func configure() {
-        setDate()
+    func configure(with days: String) {
+        setDay(with: days)
         setGroup()
     }
 
-    private func setDate() {
-        dateStackView.arrangedSubviews.forEach { body in
+    func getData() -> String {
+        var days = ""
+        daysStackView.arrangedSubviews.forEach { day in
+            if let button = day as? UIButton, button.isSelected, let titleLabel = button.titleLabel {
+                days += titleLabel.text ?? ""
+            }
+        }
+        return days
+    }
+
+    private func setDay(with days: String) {
+        daysStackView.arrangedSubviews.forEach { body in
             if let body: UIButton = body as? UIButton {
                 body.layer.borderWidth = 1
                 body.layer.borderColor = UIColor.systemBlue.cgColor
-                body.addTarget(self, action: #selector(SettingDateCell.dateButtonTap), for: .touchUpInside)
+                body.addTarget(self, action: #selector(SettingDaysCell.dayButtonTap), for: .touchUpInside)
                 body.setTitleColor(.white, for: .selected)
+                if days.contains((body.titleLabel?.text?.characters.first)!) {
+                    body.isSelected = true
+                    body.layer.backgroundColor = UIColor.systemBlue.cgColor
+                }
             }
         }
     }
@@ -40,13 +54,13 @@ class SettingDateCell: UITableViewCell {
             if let body: UIButton = body as? UIButton {
                 body.layer.borderWidth = 1
                 body.layer.borderColor = UIColor.systemBlue.cgColor
-                body.addTarget(self, action: #selector(SettingDateCell.groupButtonTap), for: .touchUpInside)
+                body.addTarget(self, action: #selector(SettingDaysCell.groupButtonTap), for: .touchUpInside)
                 body.setTitleColor(.white, for: .selected)
             }
         }
     }
 
-    @objc private func dateButtonTap(_ sender: UIButton) {
+    @objc private func dayButtonTap(_ sender: UIButton) {
         let isOn = sender.layer.backgroundColor == UIColor.systemBlue.cgColor
         sender.isSelected = !isOn
         sender.layer.backgroundColor = sender.isSelected ? UIColor.systemBlue.cgColor : UIColor.white.cgColor

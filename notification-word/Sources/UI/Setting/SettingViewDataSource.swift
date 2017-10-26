@@ -11,20 +11,25 @@ import UIKit
 
 final class SettingViewDataSource: NSObject {
     enum Section: Int {
-        case date
+        case day
         case time
 
         case MAX_NUM
+    }
+    private let presenter: SettingPresenter
+
+    init(presenter: SettingPresenter) {
+        self.presenter = presenter
     }
 
     func configure(with tableView: UITableView) {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.isScrollEnabled = false
-
-        tableView.register(cellType: AlertDateCell.self)
     }
+}
 
+extension SettingViewDataSource: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return Section.MAX_NUM.rawValue
     }
@@ -37,13 +42,13 @@ final class SettingViewDataSource: NSObject {
         let section = Section(rawValue: indexPath.section)!
 
         switch section {
-        case .date:
-            let cell = tableView.dequeueReusableCell(with: SettingDateCell.self, for: indexPath)
-            cell.configure()
+        case .day:
+            let cell = tableView.dequeueReusableCell(with: SettingDaysCell.self, for: indexPath)
+            cell.configure(with: presenter.alertDay.days)
             return cell
         case .time:
             let cell = tableView.dequeueReusableCell(with: SettingTimeCell.self, for: indexPath)
-            cell.configure()
+            cell.configure(with: presenter.alertDay.time)
             return cell
         default:
             return UITableViewCell()

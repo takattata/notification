@@ -9,13 +9,27 @@
 import Foundation
 
 protocol SettingPresenter: class {
+    var alertDay: AlertDay! { get set }
+    var line: Int! { get set }
+
     init(view: SettingView)
 }
 
 final class SettingViewPresenter: SettingPresenter {
+    var alertDay: AlertDay!
+    var line: Int!
+
     private weak var view: SettingView?
 
     init(view: SettingView) {
         self.view = view
+    }
+
+    func setDay(with days: String) {
+        alertDay.days = days
+    }
+
+    func setTime(with time: DateComponents) {
+        alertDay.time = time
     }
 }

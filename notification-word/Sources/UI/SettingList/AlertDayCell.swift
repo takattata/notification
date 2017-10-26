@@ -1,5 +1,5 @@
 //
-//  AlertDateCell.swift
+//  AlertDayCell.swift
 //  notification-word
 //
 //  Created by Takashima on 2017/09/28.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AlertDateCell: UITableViewCell {
+class AlertDayCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var enableSwitch: UISwitch!
@@ -22,7 +22,7 @@ class AlertDateCell: UITableViewCell {
 
     func configure(time: Date, dayOfTheWeek: String, enabled: Bool) {
         setTime(time)//Date())
-        setDate(dayOfTheWeek)//"月(test)")
+        setDay(dayOfTheWeek)//"月(test)")
         setEnable(enabled)
     }
 
@@ -34,7 +34,7 @@ class AlertDateCell: UITableViewCell {
         timeLabel.text = formatter.string(from: time)
     }
 
-    private func setDate(_ dayOfTheWeek: String) {
+    private func setDay(_ dayOfTheWeek: String) {
         dateLabel.text = dayOfTheWeek
     }
 

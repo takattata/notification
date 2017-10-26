@@ -16,7 +16,7 @@ final class HomeViewDataSource: NSObject {
         case MAX_NUM
     }
 
-    fileprivate let presenter: HomePresenter
+    private let presenter: HomePresenter
 
     init(presenter: HomePresenter) {
         self.presenter = presenter
