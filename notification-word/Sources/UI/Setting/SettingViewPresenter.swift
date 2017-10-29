@@ -32,4 +32,12 @@ final class SettingViewPresenter: SettingPresenter {
     func setTime(with time: DateComponents) {
         alertDay.time = time
     }
+
+    ///FIXME: save to UserDefaults.
+    func save() {
+        ///FIXME: ugly source... 
+        let manager = AlertManager()
+        manager.saveToAdd(with: alertDay, at: line)
+        NotificationCenter.default.post(name: .listFetchDates, object: nil)
+    }
 }

@@ -41,30 +41,24 @@ enum Day: Int {
 }
 
 struct AlertDay {
+    enum Parameter: String {
+        case days = "AlertDays"
+        case time = "AlertTimes"
+        case enabled = "AlertEnabled"
+    }
+
     var days: String
     var time: DateComponents
     var enabled: Bool
-
-    enum Parameters {
-        case days(line: Int)
-        case time(line: Int)
-        case enabled(line: Int)
-    }
-    static func key(with parameter: Parameters) -> String {
-        switch parameter {
-        case let .days(line):
-            return "AlertDay\(line).days"
-        case let .time(line):
-            return "AlertDay\(line).time"
-        case let .enabled(line):
-            return "AlertDay\(line).enabled"
-        }
-    }
 }
 
 class AlertDays {
     var count: Int { return alerts.count }
     private var alerts: [AlertDay] = []
+
+    func reset() {
+        alerts.removeAll()
+    }
 
     func add(_ alert: AlertDay) {
         alerts.append(alert)
@@ -80,5 +74,72 @@ class AlertDays {
 
     func date(at index: Int) -> AlertDay? {
         return index < count ? alerts[index] : nil
+    }
+}
+
+class AlertManager {
+    let userDefaults = UserDefaults.standard
+
+    func loadDays() -> [String] {
+        var days: [String] = []
+        if userDefaults.object(forKey: AlertDay.Parameter.days.rawValue) != nil {
+            days = userDefaults.object(forKey: AlertDay.Parameter.days.rawValue) as! [String]
+        }
+        return days
+    }
+
+    func loadTimes() -> [String] {
+        var times: [String] = []
+        if userDefaults.object(forKey: AlertDay.Parameter.days.rawValue) != nil {
+            times = userDefaults.object(forKey: AlertDay.Parameter.time.rawValue) as! [String]
+        }
+        return times
+    }
+
+    func loadFlags() -> [Bool] {
+        var flags: [Bool] = []
+        if userDefaults.object(forKey: AlertDay.Parameter.enabled.rawValue) != nil {
+            flags = userDefaults.object(forKey: AlertDay.Parameter.enabled.rawValue) as! [Bool]
+        }
+        return flags
+    }
+
+    func saveToAdd(with alertDay: AlertDay, at line: Int) {
+        var days = loadDays()
+        var times = loadTimes()
+        var flags = loadFlags()
+        let time = alertDay.time.date?.displayTime()
+        if line < days.count {
+            days[line] = alertDay.days
+            times[line] = time!
+            flags[line] = alertDay.enabled
+        } else {
+            days.append(alertDay.days)
+            times.append(time!)
+            flags.append(alertDay.enabled)
+        }
+        userDefaults.set(days, forKey: AlertDay.Parameter.days.rawValue)
+        userDefaults.set(times, forKey: AlertDay.Parameter.time.rawValue)
+        userDefaults.set(flags, forKey: AlertDay.Parameter.enabled.rawValue)
+    }
+
+    func saveToDelete(at line: Int) {
+        var days = loadDays()
+        var times = loadTimes()
+        var flags = loadFlags()
+        if line < days.count {
+            days.remove(at: line)
+            times.remove(at: line)
+            flags.remove(at: line)
+        }
+        userDefaults.set(days, forKey: AlertDay.Parameter.days.rawValue)
+        userDefaults.set(times, forKey: AlertDay.Parameter.time.rawValue)
+        userDefaults.set(flags, forKey: AlertDay.Parameter.enabled.rawValue)
+    }
+
+    func reset() {
+        userDefaults.removeObject(forKey: AlertDay.Parameter.days.rawValue)
+        userDefaults.removeObject(forKey: AlertDay.Parameter.time.rawValue)
+        userDefaults.removeObject(forKey: AlertDay.Parameter.enabled.rawValue)
     }
 }

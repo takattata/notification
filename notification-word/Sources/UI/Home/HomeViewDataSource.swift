@@ -45,6 +45,8 @@ extension HomeViewDataSource: UITableViewDataSource {
         switch section {
         case .word:
             let cell = tableView.dequeueReusableCell(with: WordCell.self, for: indexPath)
+            cell.backgroundColor = .clear
+            cell.contentView.backgroundColor = .clear
             ///FIXME: なんかダサい.
             if let word = presenter.getWord() {
                 cell.configure(title: word.text, quotation: word.quotation)

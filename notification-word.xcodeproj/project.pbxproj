@@ -25,6 +25,7 @@
 		3B0B7CE71F7CB4FE00ED7E73 /* SettingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B7CE31F7CB4FE00ED7E73 /* SettingListViewController.swift */; };
 		3B0B7CEA1F7CB5FD00ED7E73 /* SettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0B7CE91F7CB5FD00ED7E73 /* SettingViewController.storyboard */; };
 		3B0B7CEC1F7CB60400ED7E73 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B7CEB1F7CB60400ED7E73 /* SettingViewController.swift */; };
+		3B55E8571FA34F7B008AA9DD /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55E8561FA34F7B008AA9DD /* DateExtension.swift */; };
 		3B6504A91F764EFA00177319 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6504A71F764EF900177319 /* HomeViewController.swift */; };
 		3B8D0DE81F5964CA009D982B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D0DE71F5964CA009D982B /* AppDelegate.swift */; };
 		3B8D0DEF1F5964CA009D982B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B8D0DEE1F5964CA009D982B /* Assets.xcassets */; };
@@ -78,6 +79,7 @@
 		3B0B7CE31F7CB4FE00ED7E73 /* SettingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingListViewController.swift; sourceTree = "<group>"; };
 		3B0B7CE91F7CB5FD00ED7E73 /* SettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingViewController.storyboard; sourceTree = "<group>"; };
 		3B0B7CEB1F7CB60400ED7E73 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		3B55E8561FA34F7B008AA9DD /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		3B6504A71F764EF900177319 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3B8D0DE41F5964CA009D982B /* notification-word.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "notification-word.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B8D0DE71F5964CA009D982B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 		3B9A5B5E1F882CBA00BE1C4C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3B55E8561FA34F7B008AA9DD /* DateExtension.swift */,
 				3B9A5B5C1F882CA800BE1C4C /* NSObjectExtension.swift */,
 				3BE46B7A1F8307D100458572 /* UIColorExtension.swift */,
 				3B9A5B5F1F882CCE00BE1C4C /* UITableViewExtension.swift */,
@@ -592,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B031ED21F7CC175002F8C18 /* SettingDateCell.swift in Sources */,
+				3B55E8571FA34F7B008AA9DD /* DateExtension.swift in Sources */,
 				3B0B374F1F91B9D7007BD225 /* HomeViewPresenter.swift in Sources */,
 				3B6504A91F764EFA00177319 /* HomeViewController.swift in Sources */,
 				3B031ED41F7CC181002F8C18 /* SettingTimeCell.swift in Sources */,

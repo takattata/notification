@@ -78,12 +78,10 @@ extension SettingViewController {
         if let timeCell = tableView.visibleCells[SettingViewDataSource.Section.time.rawValue] as? SettingTimeCell {
             presenter.setTime(with: timeCell.getData())
         }
+        presenter.save()
 
         ///FIXME: func popViewController.
         navigationController?.popViewController(animated: true)
-        if let settingListView = navigationController?.topViewController as? SettingListView {
-            settingListView.setAlertDay(with: presenter.alertDay, at: presenter.line)
-        }
     }
 }
 

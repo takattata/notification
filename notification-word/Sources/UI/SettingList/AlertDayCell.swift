@@ -27,11 +27,7 @@ class AlertDayCell: UITableViewCell {
     }
 
     private func setTime(_ time: Date) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "h:mm a"
-        formatter.amSymbol = "AM"
-        formatter.pmSymbol = "PM"
-        timeLabel.text = formatter.string(from: time)
+        timeLabel.text = time.displayTime()
     }
 
     private func setDay(_ dayOfTheWeek: String) {
@@ -39,6 +35,7 @@ class AlertDayCell: UITableViewCell {
     }
 
     private func setEnable(_ enabled: Bool) {
+        enableSwitch.isSelected = enabled
         enableSwitch.isOn = enabled
     }
 }

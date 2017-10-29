@@ -11,7 +11,6 @@ import UIKit
 
 protocol SettingListView: class {
     func showSetting(with: AlertDay, at: Int)
-    func setAlertDay(with: AlertDay, at: Int)
 }
 
 class SettingListViewController: UIViewController {
@@ -30,6 +29,7 @@ class SettingListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        presenter.viewDidLoad()
         dataSource.configure(with: tableView)
         setupNavigation()
     }
@@ -48,7 +48,7 @@ extension SettingListViewController {
     }
 
     @objc private func plusButtonTap(_ sender: UIBarButtonItem) {
-        presenter.showSetting()
+        presenter.showSetting(with: nil, at: presenter.countOfDays())
     }
 }
 
@@ -56,9 +56,5 @@ extension SettingListViewController: SettingListView {
     func showSetting(with date: AlertDay, at row: Int) {
         let viewController = SettingViewController.instantiate(date: date, line: row)
         navigationController?.pushViewController(viewController, animated: true)
-    }
-
-    func setAlertDay(with date: AlertDay, at row: Int) {
-        presenter.setDay(with: date, at: row)
     }
 }

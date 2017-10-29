@@ -33,6 +33,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.separatorStyle = .none
+        tableView.backgroundView = UIImageView(image: UIImage(named: "image_bg"))
         dataSource.configure(with: tableView)
         setupNavigation()
     }
@@ -41,22 +43,28 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     private func setupNavigation() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.fontAwesomeIcon(name: .refresh, textColor: .systemBlue, size: CGSize(width: 36, height: 36)), style: .plain, target: self, action: #selector(HomeViewController.refreshButtonTap))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.fontAwesomeIcon(name: .bug, textColor: .systemBlue, size: CGSize(width: 36, height: 36)), style: .plain, target: self, action: #selector(HomeViewController.resetUserDefaultsForDebug))
 
-        favoriteButton.addTarget(self, action: #selector(HomeViewController.favoriteButtonTap), for: .touchUpInside)
-        favoriteButton.setImage(UIImage.fontAwesomeIcon(name: .starO, textColor: .systemBlue, size: CGSize(width: 36, height: 36)), for: .normal)
-        favoriteButton.setImage(UIImage.fontAwesomeIcon(name: .star, textColor: .systemBlue, size: CGSize(width: 36, height: 36)), for: .selected)
-        favoriteButton.sizeToFit()
-
-        let icons: [UIBarButtonItem] = [
-            UIBarButtonItem(customView: favoriteButton),
-            UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(HomeViewController.shareButtonTap))
-        ]
-
-        navigationItem.rightBarButtonItems = icons
+        ///FIXME: 機能解除
+//        favoriteButton.addTarget(self, action: #selector(HomeViewController.favoriteButtonTap), for: .touchUpInside)
+//        favoriteButton.setImage(UIImage.fontAwesomeIcon(name: .starO, textColor: .systemBlue, size: CGSize(width: 36, height: 36)), for: .normal)
+//        favoriteButton.setImage(UIImage.fontAwesomeIcon(name: .star, textColor: .systemBlue, size: CGSize(width: 36, height: 36)), for: .selected)
+//        favoriteButton.sizeToFit()
+//
+//        let icons: [UIBarButtonItem] = [
+//            UIBarButtonItem(customView: favoriteButton),
+//            UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(HomeViewController.shareButtonTap))
+//        ]
+//        navigationItem.rightBarButtonItems = icons
     }
 
     @objc private func refreshButtonTap(_ sender: UIBarButtonItem) {
 
+    }
+
+    ///FIXME: debug.
+    @objc private func resetUserDefaultsForDebug(_ sender: UIBarButtonItem) {
+        AlertManager().reset()
     }
 
     @objc private func favoriteButtonTap(_ sender: UIBarButtonItem) {

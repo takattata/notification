@@ -63,8 +63,10 @@ extension SettingListViewDataSource: UITableViewDelegate {
 
         switch section {
         case .alert:
+            let cell = tableView.dequeueReusableCell(with: AlertDayCell.self, for: indexPath)
             if let date = presenter.getDay(at: indexPath.row) {
-                presenter.showSetting(with: date, at: indexPath.row)
+                ///FIXME: naiwa wwwwww.
+                presenter.showSetting(with: AlertDay(days: date.days, time: date.time, enabled: cell.enableSwitch.isSelected), at: indexPath.row)
             }
         default:
             break
@@ -77,6 +79,8 @@ extension SettingListViewDataSource: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let manager = AlertManager()
+            manager.saveToDelete(at: indexPath.row)
             presenter.removeDay(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
