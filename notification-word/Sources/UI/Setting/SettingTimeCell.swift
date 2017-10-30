@@ -22,6 +22,6 @@ class SettingTimeCell: UITableViewCell {
     }
 
     func getData() -> DateComponents {
-        return Calendar.current.dateComponents(in: TimeZone.current, from: datePicker.date)
+        return Calendar.current.dateComponents(in: TimeZone.current, from: datePicker.clampedDate)
     }
 }

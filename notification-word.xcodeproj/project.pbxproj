@@ -35,6 +35,7 @@
 		3B9A5B5D1F882CA800BE1C4C /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A5B5C1F882CA800BE1C4C /* NSObjectExtension.swift */; };
 		3B9A5B601F882CCE00BE1C4C /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A5B5F1F882CCE00BE1C4C /* UITableViewExtension.swift */; };
 		3B9A5B621F884CFD00BE1C4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B9A5B611F884CFD00BE1C4C /* GoogleService-Info.plist */; };
+		3BA4D7CF1FA6AE8E005CF403 /* UIDatePickerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA4D7CE1FA6AE8E005CF403 /* UIDatePickerExtension.swift */; };
 		3BC6417B1F7C5F11008BC755 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6417A1F7C5F11008BC755 /* WordCell.swift */; };
 		3BC6417F1F7C8462008BC755 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6417E1F7C8462008BC755 /* TabBarController.swift */; };
 		3BE46B7B1F8307D200458572 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE46B7A1F8307D100458572 /* UIColorExtension.swift */; };
@@ -95,6 +96,7 @@
 		3B9A5B5C1F882CA800BE1C4C /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		3B9A5B5F1F882CCE00BE1C4C /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		3B9A5B611F884CFD00BE1C4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3BA4D7CE1FA6AE8E005CF403 /* UIDatePickerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDatePickerExtension.swift; sourceTree = "<group>"; };
 		3BC6417A1F7C5F11008BC755 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		3BC6417E1F7C8462008BC755 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		3BE46B7A1F8307D100458572 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				3B9A5B5C1F882CA800BE1C4C /* NSObjectExtension.swift */,
 				3BE46B7A1F8307D100458572 /* UIColorExtension.swift */,
 				3B9A5B5F1F882CCE00BE1C4C /* UITableViewExtension.swift */,
+				3BA4D7CE1FA6AE8E005CF403 /* UIDatePickerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -603,6 +606,7 @@
 				3B0B7CE71F7CB4FE00ED7E73 /* SettingListViewController.swift in Sources */,
 				3B9A5B601F882CCE00BE1C4C /* UITableViewExtension.swift in Sources */,
 				3B8D0DE81F5964CA009D982B /* AppDelegate.swift in Sources */,
+				3BA4D7CF1FA6AE8E005CF403 /* UIDatePickerExtension.swift in Sources */,
 				3B9A5B5D1F882CA800BE1C4C /* NSObjectExtension.swift in Sources */,
 				3B0B375A1F946CAA007BD225 /* SettingViewPresenter.swift in Sources */,
 				3B0B375C1F946CD0007BD225 /* SettingListViewPresenter.swift in Sources */,
